@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const FoodCard = ({ food }) => {
-  const { strMeal, strMealThumb, strCategory, strInstructions } = food;
+  const { idMeal,strMeal, strMealThumb, strCategory, strInstructions } = food;
   console.log("food", food);
   return (
     <div>
@@ -21,7 +22,7 @@ const FoodCard = ({ food }) => {
           </h2>
           <p>{strInstructions.slice(0,120)}....</p>
           <div className="card-actions justify-end">
-            <button className="px-4 py-1 bg-green-700 hover:bg-green-800 text-white rounded cursor-pointer">Details</button>
+            <Link href={`foodDetails/${idMeal}`}><button className="px-4 py-1 bg-green-700 hover:bg-green-800 text-white rounded cursor-pointer">Details</button></Link>
             <button className="px-4 py-1 bg-green-700 hover:bg-green-800 text-white rounded cursor-pointer">Add to Cart</button>
           </div>
         </div>
