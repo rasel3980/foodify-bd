@@ -1,4 +1,5 @@
 'use client'
+import Loading from "@/app/loading";
 import Image from "next/image";
 import { use, useEffect, useState } from "react";
 
@@ -17,7 +18,7 @@ const FoodDetails = ({ params }) => {
     }, [id]);
 
     if (!item) {
-        return <p>Loading...</p>;
+        return <Loading></Loading>;
     }
 
     return (

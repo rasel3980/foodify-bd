@@ -1,6 +1,7 @@
 'use client'
 import FoodCard from '@/app/components/FoodCard';
 import React, { useEffect, useState } from 'react';
+import Loading from '../loading';
 
 const Food = () => {
     const [foods,setFoods] = useState([])
@@ -14,6 +15,10 @@ const Food = () => {
         }
         fetchData()
     },[])
+
+    if(!foods){
+        return <Loading></Loading>
+    }
     
     return (
         <div>
