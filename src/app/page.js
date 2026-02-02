@@ -20,7 +20,6 @@ export default function Home() {
   }
   return (
     <div>
-      this is home page
       <div className="grid grid-cols-3 gap-5">
         {
         items.slice(0,6).map((food)=><HomeProduct key={food.idMeal} food={food}></HomeProduct>)
